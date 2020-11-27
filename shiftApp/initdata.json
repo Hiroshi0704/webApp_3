@@ -1,0 +1,22 @@
+[
+  {
+    "model": "shiftapp.shiftappplan",
+    "pk": "7f1ed593-021c-4591-9210-2a2fcc4419f6",
+    "fields": {
+      "title": "Plan1",
+      "price": 100,
+      "is_manager": true,
+      "max_worker": 5
+    }
+  },
+  {
+    "model": "shiftapp.shiftappplan",
+    "pk": "e0f0feb6-cc8b-45c3-8dfb-77039b250b80",
+    "fields": {
+      "title": "Free",
+      "price": 0,
+      "is_manager": false,
+      "max_worker": 0
+    }
+  }
+]

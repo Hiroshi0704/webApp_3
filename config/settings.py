@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # apps
     'accounts.apps.AccountsConfig',
-    'shiftApp.apps.ShiftappConfig',
+    'shiftapp.apps.ShiftappConfig',
 ]
 
 MIDDLEWARE = [

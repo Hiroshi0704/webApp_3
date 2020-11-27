@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from django.shortcuts import get_object_or_404
 
-from shiftApp.serializers import ShiftAppSerializer
-from shiftApp.models import ShiftApp
+from shiftapp.serializers import ShiftAppSerializer
+from shiftapp.models import ShiftApp
 
 
 class ShiftAppViewSet(viewsets.ModelViewSet):

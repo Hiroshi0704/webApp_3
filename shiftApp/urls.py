@@ -8,7 +8,7 @@ router = routers.DefaultRouter()
 router.register('shifts', views.ShiftViewSet, 'shifts')
 router.register('shiftApps', views.ShiftAppViewSet, 'shiftApps')
 
-app_name = 'shiftApp'
+app_name = 'shiftapp'
 urlpatterns = [
     path('rest/', include(router.urls)),
 ]

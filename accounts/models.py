@@ -1,3 +1,4 @@
+import uuid
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -42,6 +43,8 @@ class User(AbstractUser):
 
     class Meta(object):
         db_table = 'user'
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     # ユーザー名から NULL制約、ユニーク制約、入力必須制限を除去
     username = models.CharField(
