@@ -10,3 +10,4 @@ class ShiftAppSerializer(serializers.ModelSerializer):
     class Meta:
         model = ShiftApp
         fields = ['id', 'user', 'plan', 'plan_info']
+        read_only_fields = ['user']

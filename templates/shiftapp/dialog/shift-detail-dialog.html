@@ -1,0 +1,17 @@
+<div class="dialog shiftDetailDialog" id="shiftDetailDialog" style="display: none;">
+  <div class="innerShiftDetail">
+    <button type="button" class="close" id="shiftDetailDialogCloseBtn">&times;</button>
+    <h3>Shift Detail <span></span></h3>
+    <div class="actions">
+      <button type="button" id="shfitEditBtn" class="btn btn-primary"><i class="far fa-edit"></i></button>
+      <button type="button" id="shfitInputPlanBtn" class="btn btn-success">plan</button>
+      <button type="button" id="shfitInputManuallyBtn" class="btn btn-success">manual</button>
+      <button type="button" id="shfitInputAutoBtn" class="btn btn-success">auto</button>
+      <button type="button" id="shiftDeleteBtn" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+    </div>
+    <form>
+      {% csrf_token %}
+      <div id="shiftDetailTableContainer"></div>
+    </form>
+  </div>
+</div>

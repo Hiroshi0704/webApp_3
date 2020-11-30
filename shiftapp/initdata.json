@@ -11,12 +11,64 @@
   },
   {
     "model": "shiftapp.shiftappplan",
+    "pk": "989327ae-e235-4ae5-bcd4-4347d53ca9b7",
+    "fields": {
+      "title": "Plan3",
+      "price": 300,
+      "is_manager": true,
+      "max_worker": 7
+    }
+  },
+  {
+    "model": "shiftapp.shiftappplan",
     "pk": "e0f0feb6-cc8b-45c3-8dfb-77039b250b80",
     "fields": {
       "title": "Free",
       "price": 0,
       "is_manager": false,
       "max_worker": 0
+    }
+  },
+  {
+    "model": "shiftapp.shiftappplan",
+    "pk": "f3c356f0-ce96-4a98-8a66-44584f82226f",
+    "fields": {
+      "title": "Plan2",
+      "price": 200,
+      "is_manager": true,
+      "max_worker": 6
+    }
+  },
+  {
+    "model": "shiftapp.shiftapp",
+    "pk": "131547f1-6b00-4b03-bc29-b1e6932b772e",
+    "fields": {
+      "user": "dfce6dcc-2f74-45ef-bca1-fff5ecd89c24",
+      "plan": "e0f0feb6-cc8b-45c3-8dfb-77039b250b80"
+    }
+  },
+  {
+    "model": "shiftapp.shiftapp",
+    "pk": "988473c2-481f-4b37-a6ac-311412ecf849",
+    "fields": {
+      "user": "e5b0cb28-df4a-4c4e-abdd-02650a675fb8",
+      "plan": "989327ae-e235-4ae5-bcd4-4347d53ca9b7"
+    }
+  },
+  {
+    "model": "shiftapp.shiftapp",
+    "pk": "da4e6edc-86dc-4788-b2c3-b6179a12a935",
+    "fields": {
+      "user": "bcdf2cd4-73f1-4732-9d0e-6809dcd9c7ab",
+      "plan": "7f1ed593-021c-4591-9210-2a2fcc4419f6"
+    }
+  },
+  {
+    "model": "shiftapp.shiftapp",
+    "pk": "de97303c-a072-4d7c-8f3a-e3ae79b502af",
+    "fields": {
+      "user": "77865356-4a2a-46a2-b766-60448e973a4e",
+      "plan": "f3c356f0-ce96-4a98-8a66-44584f82226f"
     }
   }
 ]

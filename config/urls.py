@@ -19,12 +19,12 @@ from django.views.generic import TemplateView
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
+    path('shiftApp/', include('shiftapp.urls')),
     path('accounts/', include('allauth.urls')),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('admin/', admin.site.urls),
     path('api-auth/', include(
         'rest_framework.urls', namespace='rest_framework')),
-    path('shiftApp/', include('shiftapp.urls')),
 ]
 
 if settings.DEBUG:
