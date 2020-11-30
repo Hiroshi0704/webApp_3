@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
-from .work_style import WorkStyleSerializer
+# from .work_style import WorkStyleSerializer
 from ..models import WorkSchedule
 
 
 class WorkScheduleSerializer(serializers.ModelSerializer):
     # shift = ShiftSerializer()
-    work_style = WorkStyleSerializer()
+    # work_style = WorkStyleSerializer()
 
     class Meta:
         model = WorkSchedule

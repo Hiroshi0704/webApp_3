@@ -128,40 +128,40 @@ USE_TZ = True
 # Logging #
 ###########
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'develop': {
-            'format': '%(asctime)s [%(levelname)s] %(pathname)s:%(lineno)d '
-                      '%(message)s'
-        },
-    },
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'develop',
-        },
-    },
-    'loggers': {
-        '': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
-        'django': {
-            'handlers': ['console'],
-            'level': 'INFO',
-            'propagate': False,
-        },
-        # 'django.db.backends': {
-        #     'handlers': ['console'],
-        #     'level': 'DEBUG',
-        #     'propagate': False,
-        # },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'develop': {
+#             'format': '%(asctime)s [%(levelname)s] %(pathname)s:%(lineno)d '
+#                       '%(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'develop',
+#         },
+#     },
+#     'loggers': {
+#         '': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG',
+#             'propagate': False,
+#         },
+#         'django': {
+#             'handlers': ['console'],
+#             'level': 'INFO',
+#             'propagate': False,
+#         },
+#         # 'django.db.backends': {
+#         #     'handlers': ['console'],
+#         #     'level': 'DEBUG',
+#         #     'propagate': False,
+#         # },
+#     },
+# }
 
 
 ################
@@ -191,7 +191,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'index'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 
@@ -209,7 +209,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 if DEBUG:
     def show_toolbar(request):
         return True
-
 
     INSTALLED_APPS += (
         'debug_toolbar',

@@ -10,9 +10,9 @@ class ShiftApp(models.Model):
     """勤務表作成機能"""
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
-    plan = models.ForeignKey(
-        ShiftAppPlan, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.OneToOneField(
+        get_user_model(), on_delete=models.CASCADE, unique=True)
+    plan = models.ForeignKey(ShiftAppPlan, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return f'ShiftApp [{self.user.username}]'
+        return f'ShiftApp [{self.user.email}]'

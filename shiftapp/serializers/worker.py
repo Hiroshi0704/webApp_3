@@ -1,11 +1,10 @@
 from rest_framework import serializers
 
-from .user import UserSerializer
-from ..models import Worker
+from shiftapp.models import Worker
 
 
 class WorkerSerializer(serializers.ModelSerializer):
-    worker_detail = UserSerializer()
+    # worker_detail = UserSerializer()
 
     class Meta:
         model = Worker

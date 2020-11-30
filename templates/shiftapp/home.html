@@ -1,0 +1,16 @@
+{% extends 'shiftapp/base.html' %}
+{% load static %}
+
+{% block main_title %}
+  - Home
+{% endblock main_title %}
+
+{% block main_js %}
+{% endblock main_js %}
+
+{% block main_content %}
+  <div class="home-view">
+    {% include 'shiftapp/dialog/shift-detail-dialog.html' %}
+    {% include 'shiftapp/dialog/shift-list-dialog.html' %}
+  </div>
+{% endblock main_content %}

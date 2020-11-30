@@ -10,9 +10,9 @@ from .models import User
 
 
 @override_settings(
-    LANGUAGE_CODE = 'EN',
-    INSTALLED_APPS = [l for l in settings.INSTALLED_APPS if l != 'debug_toolbar'],
-    MIDDLEWARE = [l for l in settings.MIDDLEWARE if l != 'debug_toolbar.middleware.DebugToolbarMiddleware'],
+    LANGUAGE_CODE='EN',
+    INSTALLED_APPS=[l for l in settings.INSTALLED_APPS if l != 'debug_toolbar'],
+    MIDDLEWARE=[l for l in settings.MIDDLEWARE if l != 'debug_toolbar.middleware.DebugToolbarMiddleware'],
 )
 class AccountTests(TestCase):
 
@@ -31,10 +31,10 @@ class AccountTests(TestCase):
             reverse('account_login'),
             {'login': 'testuser@example.com', 'password': 'Password01'}
         )
-        self.assertRedirects(resp, reverse('home'))
+        self.assertRedirects(resp, reverse('index'))
         self.assertIn('_auth_user_id', self.client.session)
         self.assertEqual(
-            int(self.client.session['_auth_user_id']), self.user.pk)
+            self.client.session['_auth_user_id'], str(self.user.pk))
 
     def test_login_not_exists_user(self):
         resp = self.client.post(
@@ -52,7 +52,7 @@ class AccountTests(TestCase):
         client = Client()
         client.force_login(self.user)
         resp = client.get(reverse('account_login'))
-        self.assertRedirects(resp, reverse('home'))
+        self.assertRedirects(resp, reverse('index'))
         self.assertTemplateUsed('account/login.html')
 
     def test_logout_page_with_logged_in(self):
@@ -66,7 +66,7 @@ class AccountTests(TestCase):
         client = Client()
         client.force_login(self.user)
         self.assertIn('_auth_user_id', client.session)
-        self.assertEqual(int(client.session['_auth_user_id']), self.user.pk)
+        self.assertEqual(client.session['_auth_user_id'], str(self.user.pk))
 
         resp = client.post(reverse('account_logout'))
         self.assertRedirects(resp, reverse('account_login'))
@@ -114,7 +114,10 @@ class AccountTests(TestCase):
             '_save': 'save',
             '_continue': 1
         })
-        self.assertRedirects(resp, '/admin/accounts/user/3/change/')
+        user = User.objects.get(email='newuser@example.com')
+        self.assertRedirects(
+            resp,
+            '/admin/accounts/user/' + str(user.id) + '/change/')
 
     def test_create_user_form_common_password(self):
         data = {
