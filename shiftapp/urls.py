@@ -16,7 +16,10 @@ router.register('shiftPlans', views.ShiftPlanViewSet, 'shiftPlans')
 router.register('workPlans', views.WorkPlanViewSet, 'workPlans')
 router.register('workSchedules', views.WorkScheduleViewSet, 'workSchedules')
 router.register('workStyles', views.WorkStyleViewSet, 'workStyles')
-
+router.register(
+    'shiftWorkerRelations',
+    views.ShiftWorkerRelationViewSet,
+    'shiftWorkerRelations')
 app_name = 'shiftapp'
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),

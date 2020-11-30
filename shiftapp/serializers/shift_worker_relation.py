@@ -5,7 +5,7 @@ from .worker import WorkerSerializer
 from ..models import ShiftWorkerRelation
 
 
-class WorkerRelationSerializer(serializers.ModelSerializer):
+class ShiftWorkerRelationSerializer(serializers.ModelSerializer):
     shift = ShiftSerializer()
     worker = WorkerSerializer()
 

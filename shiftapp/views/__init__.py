@@ -7,3 +7,4 @@ from .shift_plan_viewset import ShiftPlanViewSet
 from .work_plan_viewset import WorkPlanViewSet
 from .work_schedule_viewset import WorkScheduleViewSet
 from .work_style_viewset import WorkStyleViewSet
+from .shift_worker_relation_viewset import ShiftWorkerRelationViewSet

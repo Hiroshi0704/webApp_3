@@ -6,3 +6,4 @@ from .shift_plan import ShiftPlanSerializer
 from .work_plan import WorkPlanSerializer
 from .work_schedule import WorkScheduleSerializer
 from .work_style import WorkStyleSerializer
+from .shift_worker_relation import ShiftWorkerRelationSerializer
